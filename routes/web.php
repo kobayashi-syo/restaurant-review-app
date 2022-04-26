@@ -14,3 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','App\Http\Controllers\ReviewController@index')->name('reviews.index');
+Route::get('/review/create','App\Http\Controllers\ReviewController@reviewCreateGet')->name('review.create');
+Route::post('/review/create','App\Http\Controllers\ReviewController@reviewCreatePost');
+Route::get('/review/confirmation','App\Http\Controllers\ReviewController@reviewConfirmation')->name('review.confirmation');
+Route::get('/review/{id}/detail','App\Http\Controllers\ReviewController@reviewDetail')->name('review.Detail');
+Route::get('/review/complete','App\Http\Controllers\ReviewController@reviewComplete')->name('review.complete');
