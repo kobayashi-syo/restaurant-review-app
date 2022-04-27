@@ -28,7 +28,7 @@
                     <p class="text-3xl mr-4">⭐️⭐️⭐️⭐️⭐️</p>
                     <p class="text-3xl">(5.0)</p>
                 </div>
-                <a href="/review/create" class="text-3xl border-black border-2 p-4">レビューする</a>
+                <a href="{{route('review.create')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
             </div>
         </div>
         <div class="flex">
@@ -42,7 +42,7 @@
                     <p class="text-3xl mr-4">⭐️⭐️⭐️⭐️⭐️</p>
                     <p class="text-3xl">(5.0)</p>
                 </div>
-                <a href="/review/create" class="text-3xl border-black border-2 p-4">レビューする</a>
+                <a href="{{route('review.create')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
             </div>
         </div>
         <div class="flex">
@@ -56,7 +56,7 @@
                     <p class="text-3xl mr-4">⭐️⭐️⭐️⭐️⭐️</p>
                     <p class="text-3xl">(5.0)</p>
                 </div>
-                <a href="/review/create" class="text-3xl border-black border-2 p-4">レビューする</a>
+                <a href="{{route('review.create')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
             </div>
         </div>
     </main>

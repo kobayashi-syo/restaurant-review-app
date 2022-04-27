@@ -17,21 +17,31 @@
     </header>
     <main class="container">
         <h2 class="text-6xl mb-20">イタリアン広島へのご意見をお聞かせください</h2>
-        <form action="/review/confirmation">
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $message)
+                <li>{{$message}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <form action="{{route('review.create')}}" method="POST">
+            @csrf
             <div class="mb-4">
                 <label for="name">氏名：</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" value="{{ old('name') }}">
             </div>
             <div class="mb-4">
                 <p class="inline font-bold">性別：</p>
                 <label for="male">男性</label>
-                <input id="male" type="radio" name="sex" value="1">
+                <input id="male" type="radio" name="sex" value="1" checked value="{{ old('sex') }}">
                 <label for="female">女性</label>
-                <input id="female" type="radio" name="sex" value="2">
+                <input id="female" type="radio" name="sex" value="2" value="{{ old('sex') }}">
             </div>
             <div class="mb-4">
                 <label for="age">年代：</label>
-                <select name="age" id="age">
+                <select name="age" id="age" value="{{ old('age') }}">
                     <option value="1">10代以下</option>
                     <option value="2">20代</option>
                     <option value="3">30代</option>
@@ -42,31 +52,35 @@
             </div>
             <div class="mb-4">
                 <label for="mail">メールアドレス：</label>
-                <input type="text" id="mail" name="mail">
+                <input type="text" id="mail" name="mail" value="{{ old('mail') }}">
             </div>
             <div class="mb-4">
                 <div class="flex">
                     <p class="font-bold">メール送信可否：</p>
                     <div>
                         <p>登録したメールアドレスにメールマガジンをお送りしてよろしいですか？</p>
-                        <input type="checkbox" name="mail-sent" value="1" checked>
+                        <input type="checkbox" name="mail-sent" value="1" checked value="{{ old('mail-sent') }}">
                     </div>
                 </div>
             </div>
             <div class="mb-10">
                 <label for="review">評価：</label>
                 <select name="review" id="review">
+                    @if(old('review'))
+                    <option value="{{old('review')}}">星{{ old('review') }}</option>
+                    @else
                     <option value="1">星1</option>
                     <option value="2">星2</option>
-                    <option value="3">星3</option>
+                    <option value="3" selected>星3</option>
                     <option value="4">星4</option>
                     <option value="5">星5</option>
+                    @endif
                 </select>
             </div>
             <div class="mb-10">
                 <div class="flex">
                     <label for="opinion" class="block mr-10">ご意見</label>
-                    <textarea name="opinion" id="opinion" cols="50" rows="10"></textarea>
+                    <textarea name="opinion" id="opinion" cols="50" rows="10">{{ old('opinion') }}</textarea>
                 </div>
             </div>
             <div class="mb-10">
