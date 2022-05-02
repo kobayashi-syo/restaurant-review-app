@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,12 @@
 <body>
     <header>
         <nav class="my-navbar">
-            <a class="my-navbar-brand" href="/">Restaurant Review App</a>
+            <div>
+                <a class="my-navbar-brand" href="/">Restaurant Review App</a>
+            </div>
+            <div class="text-white border-white border-2 mr-40">
+                <a href="/review/login" class="text-white block p-4">ログイン</a>
+            </div>
         </nav>
     </header>
     <main class="container">
@@ -26,7 +31,7 @@
             </ul>
         </div>
         @endif
-        <form action="{{route('review.create')}}" method="POST">
+        <form action="{{route('review.create.post')}}" method="POST">
             @csrf
             <div class="mb-4">
                 <label for="name">氏名：</label>
@@ -35,19 +40,47 @@
             <div class="mb-4">
                 <p class="inline font-bold">性別：</p>
                 <label for="male">男性</label>
-                <input id="male" type="radio" name="sex" value="1" checked value="{{ old('sex') }}">
+                @if(old('sex') == 2)
+                <input id="male" type="radio" name="sex" value="1">
+                @else
+                <input id="male" type="radio" name="sex" value="1" checked>
+                @endif
                 <label for="female">女性</label>
-                <input id="female" type="radio" name="sex" value="2" value="{{ old('sex') }}">
+                @if(old('sex') == 2)
+                <input id="female" type="radio" name="sex" value="2" checked>
+                @else
+                <input id="female" type="radio" name="sex" value="2">
+                @endif
             </div>
             <div class="mb-4">
                 <label for="age">年代：</label>
-                <select name="age" id="age" value="{{ old('age') }}">
+                <select name="age" id="age">
                     <option value="1">10代以下</option>
+                    @if(old('age')==2)
+                    <option value="2" selected>20代</option>
+                    @else
                     <option value="2">20代</option>
+                    @endif
+                    @if(old('age')==3)
+                    <option value="3" selected>30代</option>
+                    @else
                     <option value="3">30代</option>
+                    @endif
+                    @if(old('age')==4)
+                    <option value="4" selected>40代</option>
+                    @else
                     <option value="4">40代</option>
+                    @endif
+                    @if(old('age')==5)
+                    <option value="5" selected>50代</option>
+                    @else
                     <option value="5">50代</option>
+                    @endif
+                    @if(old('age')==6)
+                    <option value="6" selected>60代以上</option>
+                    @else
                     <option value="6">60代以上</option>
+                    @endif
                 </select>
             </div>
             <div class="mb-4">
@@ -59,20 +92,49 @@
                     <p class="font-bold">メール送信可否：</p>
                     <div>
                         <p>登録したメールアドレスにメールマガジンをお送りしてよろしいですか？</p>
-                        <input type="checkbox" name="mail-sent" value="1" checked value="{{ old('mail-sent') }}">
+                        <div>
+                            <label for="yes">はい</label>
+                            <input id="yes" type="radio" name="mail-sent" value="1" checked>
+                        </div>
+                        <div>
+                            <label for="no">いいえ</label>
+                            @if(old('mail-sent')==2)
+                            <input id="no" type="radio" name="mail-sent" value="2" checked>
+                            @else
+                            <input id="no" type="radio" name="mail-sent" value="2">
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="mb-10">
                 <label for="review">評価：</label>
                 <select name="review" id="review">
-                    @if(old('review'))
-                    <option value="{{old('review')}}">星{{ old('review') }}</option>
+                    @if(old('review') == 1)
+                    <option value="1" selected>星1</option>
                     @else
                     <option value="1">星1</option>
+                    @endif
+                    @if(old('review') == 2)
+                    <option value="2" selected>星2</option>
+                    @else
                     <option value="2">星2</option>
+                    @endif
+                    @if(old('review') == null)
                     <option value="3" selected>星3</option>
+                    @elseif(!old('review') == 3)
+                    <option value="3">星3</option>
+                    @elseif(old('review') == 3)
+                    <option value="3" selected>星3</option>
+                    @endif
+                    @if(old('review') == 4)
+                    <option value="4" selected>星4</option>
+                    @else
                     <option value="4">星4</option>
+                    @endif
+                    @if(old('review') == 5)
+                    <option value="5" selected>星5</option>
+                    @else
                     <option value="5">星5</option>
                     @endif
                 </select>

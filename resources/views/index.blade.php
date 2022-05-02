@@ -12,7 +12,12 @@
 <body>
     <header>
         <nav class="my-navbar">
-            <a class="my-navbar-brand" href="/">Restaurant Review App</a>
+            <div>
+                <a class="my-navbar-brand" href="/">Restaurant Review App</a>
+            </div>
+            <div class="text-white border-white border-2 mr-40">
+                <a href="/review/login" class="text-white block p-4">ログイン</a>
+            </div>
         </nav>
     </header>
     <main class="container">
@@ -28,7 +33,7 @@
                     <p class="text-3xl mr-4">⭐️⭐️⭐️⭐️⭐️</p>
                     <p class="text-3xl">(5.0)</p>
                 </div>
-                <a href="{{route('review.create')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
+                <a href="{{route('review.create.get')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
             </div>
         </div>
         <div class="flex">
@@ -42,7 +47,7 @@
                     <p class="text-3xl mr-4">⭐️⭐️⭐️⭐️⭐️</p>
                     <p class="text-3xl">(5.0)</p>
                 </div>
-                <a href="{{route('review.create')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
+                <a href="{{route('review.create.get')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
             </div>
         </div>
         <div class="flex">
@@ -56,7 +61,7 @@
                     <p class="text-3xl mr-4">⭐️⭐️⭐️⭐️⭐️</p>
                     <p class="text-3xl">(5.0)</p>
                 </div>
-                <a href="{{route('review.create')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
+                <a href="{{route('review.create.get')}}" class="text-3xl border-black border-2 p-4">レビューする</a>
             </div>
         </div>
     </main>

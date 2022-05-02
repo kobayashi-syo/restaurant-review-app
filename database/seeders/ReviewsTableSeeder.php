@@ -16,6 +16,8 @@ class ReviewsTableSeeder extends Seeder
      */
     public function run()
     {
+        $user = DB::table('users')->first();
+
         DB::table('reviews')->insert([
             'name' => '小林　翔',
             'sex' => 1,
@@ -24,6 +26,7 @@ class ReviewsTableSeeder extends Seeder
             'mail-sent' => 2,
             'review' => '5',
             'opinion' => 'おいしかったです',
+            'user_id' => $user->id,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

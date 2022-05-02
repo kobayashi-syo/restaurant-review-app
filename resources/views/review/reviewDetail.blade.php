@@ -12,7 +12,12 @@
 <body>
     <header>
         <nav class="my-navbar">
-            <a class="my-navbar-brand" href="/">Restaurant Review App</a>
+            <div>
+                <a class="my-navbar-brand" href="/">Restaurant Review App</a>
+            </div>
+            <div class="text-white border-white border-2 mr-40">
+                <a href="/review/login" class="text-white block p-4">ログイン</a>
+            </div>
         </nav>
     </header>
     <main>

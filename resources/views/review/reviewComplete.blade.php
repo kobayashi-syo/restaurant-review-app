@@ -12,12 +12,19 @@
 <body>
     <header>
         <nav class="my-navbar">
-            <a class="my-navbar-brand" href="/">Restaurant Review App</a>
+            <div>
+                <a class="my-navbar-brand" href="/">Restaurant Review App</a>
+            </div>
+            <div class="text-white border-white border-2 mr-40">
+                <a href="/review/login" class="text-white block p-4">ログイン</a>
+            </div>
         </nav>
     </header>
     <main class="container">
-        <p class="mb-10">ご意見をお送りいただきありがとうございました。</p>
-        <a href="/" class="border-black border-2 p-4">お店一覧へ戻る</a>
+        <p class="text-center mt-40 mb-20 text-5xl">ご意見をお送りいただきありがとうございました。</p>
+        <div class="text-center">
+            <a href="/" class="border-black border-2 p-4 text-5xl">お店一覧へ戻る</a>
+        </div>
     </main>
     <footer>
 

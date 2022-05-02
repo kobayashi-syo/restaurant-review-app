@@ -20,8 +20,10 @@ class CreateReviewsTable extends Migration
             $table->integer('age');
             $table->string('mail','100');
             $table->integer('mail-sent')->default(1);
+            $table->integer('mail-sent')->nullable()->change();
             $table->integer('review')->default(3);
             $table->string('opinion','300');
+            $table->string('opinion','300')->nullable()->change();
             $table->timestamps();
         });
     }
