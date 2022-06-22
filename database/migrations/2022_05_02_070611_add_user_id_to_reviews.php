@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::table('reviews', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
-
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

@@ -19,4 +19,9 @@ class UserController extends Controller
             'reviews' => $reviews,
         ]);
     }
+
+    public function reviewSelect(Request $req){
+        // 値を取得
+        $names 
+    }
 }

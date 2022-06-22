@@ -31,3 +31,4 @@ Route::get('/review/{id}/detail', 'App\Http\Controllers\UserController@reviewDet
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home/select','App\Http\Controllers\ReviewController@selectPost')->name('review.select.post');

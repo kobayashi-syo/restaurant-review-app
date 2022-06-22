@@ -16,26 +16,26 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => '寿司ざんまい',
-            'email' => 'susizanmai@gmail.com',
-            'password' => bcrypt('susizanmai'),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-        DB::table('users')->insert([
-            'name' => 'ぐりぐり屋',
-            'email' => 'guriguriya@gmail.com',
-            'password' => bcrypt('guriguriya'),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-        DB::table('users')->insert([
-            'name' => 'ピザハット',
-            'email' => 'pizahatto@gmail.com',
-            'password' => bcrypt('pizahatto'),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+        // DB::table('users')->insert([
+        //     'name' => '寿司ざんまい',
+        //     'email' => 'susizanmai@gmail.com',
+        //     'password' => bcrypt('susizanmai'),
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        // ]);
+        // DB::table('users')->insert([
+        //     'name' => 'ぐりぐり屋',
+        //     'email' => 'guriguriya@gmail.com',
+        //     'password' => bcrypt('guriguriya'),
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        // ]);
+        // DB::table('users')->insert([
+        //     'name' => 'ピザハット',
+        //     'email' => 'pizahatto@gmail.com',
+        //     'password' => bcrypt('pizahatto'),
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        // ]);
     }
 }
